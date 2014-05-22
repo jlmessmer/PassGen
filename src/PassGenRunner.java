@@ -16,6 +16,8 @@ public class PassGenRunner {
 		
 		in = new BufferedReader(new InputStreamReader(System.in));
 		
+		long start = System.currentTimeMillis();
+		
 		System.out.print("How long do you want your password to be? ");
 		
 		int passLength = Integer.parseInt(in.readLine());
@@ -40,12 +42,16 @@ public class PassGenRunner {
 			else
 				password += chars.get((int)(Math.random() * chars.size()));
 			
-			double percentDone = 100 * ((double)i/(double)passLength);
+			//double percentDone = 100 * ((double)i/(double)passLength);
 			
-			System.out.println(percentDone + "% done");
+			//System.out.println(percentDone + "% done");
 		}
 		
 		System.out.println("Your password is: " + password);
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println("It took " + (end - start) + " milliseconds to generate your password");
 
 	}
 	
