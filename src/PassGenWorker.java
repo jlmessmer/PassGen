@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
@@ -6,12 +9,19 @@ public class PassGenWorker implements Runnable {
 	private static int passLength;
 	private static String password = "";
 	private static ArrayList<String> sections;
+	private static BufferedReader in;
 	
-	  public static void main (String[] args) throws InterruptedException  
+	  public static void main (String[] args) throws InterruptedException, IOException
 	  {
+		  BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		  
+		  System.out.print("How long do you want your password to be? ");
+		  
+		  int desiredLength = Integer.parseInt(in.readLine());
+		  
 		  long start = System.currentTimeMillis();
 		  sections = new ArrayList<String>();
-		  passLength = 26812 / (Runtime.getRuntime().availableProcessors() + 1);
+		  passLength = desiredLength / (Runtime.getRuntime().availableProcessors() + 1);
 		  
 		  //System.out.println(passLength);
 		    
