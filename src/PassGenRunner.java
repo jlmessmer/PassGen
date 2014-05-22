@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class PassGen {
+public class PassGenRunner {
 	
 	private static BufferedReader in;
 
