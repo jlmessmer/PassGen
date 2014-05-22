@@ -12,6 +12,8 @@ public class PassGen {
 	 */
 	public static void main(String[] args) throws IOException {
 		
+		//TEST COMMENT
+		
 		in = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("How long do you want your password to be? ");
